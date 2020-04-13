@@ -1,0 +1,6 @@
+#custom ignore
+db.sqlite3
+*.pyc
+*.DS_Store
+*.vscode
+*rangovenv/*

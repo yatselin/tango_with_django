@@ -20,9 +20,6 @@ def index(request):
 def about(request):
     context_dict = {'boldmessage': 'This tutorial has been put together by Iar'}
     return render(request, 'rango/about.html', context=context_dict)
-    # Chapter 3 assignment (include hyperlink),
-    # in <a> use ">Index<" not ">index<"!!! to pass test
-    # return HttpResponse("Rango says here is the about page.<br/><a href='/rango/'>Index</a>")
 
 def show_category(request, category_name_slug):
     context_dict = {}
@@ -41,7 +38,6 @@ def add_category(request):
     if request.method == 'POST':
         form = CategoryForm(request.POST)
     if form.is_valid():
-        #form.save(commit=True)
         cat = form.save(commit=True)
         print(cat, cat.slug)
         return redirect('/rango/')
